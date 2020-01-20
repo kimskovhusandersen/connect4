@@ -1,0 +1,225 @@
+* {
+    box-sizing: border-box;
+    font-family: Tahoma, Georgia;
+    margin: 0;
+    padding: 0;
+}
+$header-height: 57px;
+$theme-color: #2A782C;
+$font-color: #FEFEFE;
+$p1-color: red;
+$p2-color: blue;
+$highlight-color: yellow;
+$board-padding: 10vw;
+$columns: 7;
+$max-slot-size: 120px;
+$circle-position: -37.5%;
+$slot-size: (100vw - ($board-padding * 2))/ $columns;
+$panel-board-width: $columns * $slot-size;
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+@mixin button($bg-color: $theme-color, $color: #FEFEFE) {
+    border: transparent;
+    background-color: $bg-color;
+    color: $color;
+    cursor: pointer;
+    border-radius: 2px;
+
+    &:hover {
+        background-color: lighten($theme-color,10%);
+        transition: 0.2s;
+    }
+}
+
+header {
+    height: $header-height;
+    background-color: rgba(255,255,230,.3);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+}
+
+#panel-board {
+    height: 100%;
+    width: $panel-board-width;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 2px 4px 2px #ccc;
+    @media (min-width: 1024px) {
+        width: $columns*$max-slot-size;
+    }
+
+    #new-game {
+        @include button($bg-color: lighten($theme-color, 20%));
+        width: 75px;
+        height: 25px;
+    }
+
+    #columns-panel {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 150px;
+
+        #col-count {
+            width: 35px;
+            height: 25px;
+            border: 1px solid #333;
+            display: flex;
+            cursor: default;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .col-controls {
+            @include button;
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
+
+#main {
+    height: calc(100vh - #{$header-height});
+    width: 100vw;
+
+    #board-wrapper {
+        padding: $board-padding;
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #board {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translateX(-50%);
+
+        .column {
+            border: 1px solid red;
+            z-index: 100;
+        }
+
+        .slot {
+            width: $slot-size;
+            height: $slot-size;
+            @media (min-width: 1024px) {
+                width: $max-slot-size;
+                height: $max-slot-size;
+            }
+            overflow: hidden;
+            margin: -1px;
+
+            .circle {
+                $circle-size: $slot-size * 1.75;
+                $circle-border-size: $slot-size / 2;
+                width: $circle-size;
+                height: $circle-size;
+                border-radius: 50%;
+                position: relative;
+                left: $circle-position;
+                top: $circle-position;
+                border: $circle-border-size solid $theme-color;
+                @media (min-width: 1024px) {
+                    $circle-size: $max-slot-size * 1.75;
+                    $circle-border-size: $max-slot-size / 2;
+                    width: $circle-size;
+                    height: $circle-size;
+                    border: $circle-border-size solid $theme-color;
+                }
+            }
+        }
+    }
+
+    #message-wrapper {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: rgba(0,0,0,0.6);
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        visibility: hidden;
+
+        #message {
+            font-size: calc(1.4em + 2.5vw);
+            font-weight: bold;
+            padding: 20px;
+            color: lighten($theme-color, 50%);
+            text-shadow: 2px 2px darken($theme-color, 20%);
+            cursor: pointer;
+            box-shadow: 2px 4px 6px rgba(0,0,0,.5);
+            width: 50%;
+            height: 50%;
+            background-color: rgba(255,255,255,.6);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+                transform: translate3d(0, 0, 0);
+                backface-visibility: hidden;
+                perspective: 1000px;
+            }
+        }
+    }
+}
+
+.p0 {
+    background-color: $p1-color;
+}
+
+.p1 {
+    background-color: $p2-color;
+}
+
+.highlight {
+    background-color: $highlight-color;
+}
+
+.gameover {
+    top: 0;
+    left: 0;
+    transition: 2s;
+    background-image: url("https://media.giphy.com/media/Zg7clvqHE3CdW/giphy.gif");
+    background-size: cover;
+}
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}

@@ -8,197 +8,206 @@
 </head>
 
 <body>
-    <div id="panelBoard">
-        <button>New Game</button>
-    </div>
-    <div id="wrapper">
-
-        <div id="messageBoard">
-            <div id="message"></div>
+    <header>
+        <div id="panel-board">
+            <button id="new-game">New Game</button>
+            <h2 id="title">Connect4</h2>
+            <div id="columns-panel">
+                <h5>Columns</h5>
+                <button class="col-controls" id="col-minus">-</button>
+                <span id="col-count">7</span>
+                <button class="col-controls" id="col-plus">+</button>
+            </div>
         </div>
-
-        <div id="board">
-            <div class="column col0">
-                <div class="slot row0">
-                    <div class="circle">
+    </header>
+    <div id="main">
+        <div id="board-wrapper">
+            <div id="board">
+                <div class="column col0">
+                    <div class="slot row0">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row1">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row2">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row3">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row4">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row5">
+                        <div class="circle">
+                        </div>
                     </div>
                 </div>
-                <div class="slot row1">
-                    <div class="circle">
+                <div class="column col1">
+                    <div class="slot row0">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row1">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row2">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row3">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row4">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row5">
+                        <div class="circle">
+                        </div>
                     </div>
                 </div>
-                <div class="slot row2">
-                    <div class="circle">
+                <div class="column col2">
+                    <div class="slot row0">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row1">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row2">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row3">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row4">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row5">
+                        <div class="circle">
+                        </div>
                     </div>
                 </div>
-                <div class="slot row3">
-                    <div class="circle">
+                <div class="column col3">
+                    <div class="slot row0">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row1">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row2">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row3">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row4">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row5">
+                        <div class="circle">
+                        </div>
                     </div>
                 </div>
-                <div class="slot row4">
-                    <div class="circle">
+                <div class="column col4">
+                    <div class="slot row0">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row1">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row2">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row3">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row4">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row5">
+                        <div class="circle">
+                        </div>
                     </div>
                 </div>
-                <div class="slot row5">
-                    <div class="circle">
+                <div class="column col5">
+                    <div class="slot row0">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row1">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row2">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row3">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row4">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row5">
+                        <div class="circle">
+                        </div>
+                    </div>
+                </div>
+                <div class="column col6">
+                    <div class="slot row0">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row1">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row2">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row3">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row4">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="slot row5">
+                        <div class="circle">
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="column col1">
-                <div class="slot row0">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row1">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row2">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row3">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row4">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row5">
-                    <div class="circle">
-                    </div>
-                </div>
-            </div>
-            <div class="column col2">
-                <div class="slot row0">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row1">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row2">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row3">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row4">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row5">
-                    <div class="circle">
-                    </div>
-                </div>
-            </div>
-            <div class="column col3">
-                <div class="slot row0">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row1">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row2">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row3">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row4">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row5">
-                    <div class="circle">
-                    </div>
-                </div>
-            </div>
-            <div class="column col4">
-                <div class="slot row0">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row1">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row2">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row3">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row4">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row5">
-                    <div class="circle">
-                    </div>
-                </div>
-            </div>
-            <div class="column col5">
-                <div class="slot row0">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row1">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row2">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row3">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row4">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row5">
-                    <div class="circle">
-                    </div>
-                </div>
-            </div>
-            <div class="column col6">
-                <div class="slot row0">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row1">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row2">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row3">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row4">
-                    <div class="circle">
-                    </div>
-                </div>
-                <div class="slot row5">
-                    <div class="circle">
-                    </div>
-                </div>
+            <div id="message-wrapper">
+                <div id="message">asdfasdfasdfasdf</div>
             </div>
         </div>
 
